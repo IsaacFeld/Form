@@ -5,9 +5,23 @@ const streamCount = document.getElementById('streamCount')
 const steps = document.querySelectorAll('.step');
 const form_steps = document.querySelectorAll('.form-step');
 const forgot = document.getElementById('forgot');
+const stepbtns = document.querySelectorAll('.btn-steps');
 maxStreams = 0;
 maxStreamsInt = 0;
 let active = 4;
+for(let i = 0; i < 7; i++){
+  stepbtns[i].addEventListener('click', () => {
+    updateProgress();
+    if(i == 6 && noAccessToStream == true){
+      console.log("hello i got here");
+    }
+    else{
+      active = i+1;
+      updateProgress();
+    }
+    
+  })
+}
 
 streamCount.addEventListener('click', () => {
   
@@ -35,7 +49,6 @@ function isNumber(value){
   
 }
 function checkSubmit(){
-  console.log(submitButton.disabled);
   if(submitButton.disabled == true){
     nextButton.style.display = "inline-block";
     submitButton.style.display = "none";
@@ -49,10 +62,12 @@ const updateProgress = () => {
   forgot.style.display = "none";
   maxStreamsInt = parseInt(streamCount.value)
   if(isNaN(maxStreamsInt)){
+    console.log("noaccess");
     maxStreamsInt = 0;
+    noAccessToStream = true;
   }
   else{
-    
+    noAccessToStream = false;
   }
   
 
@@ -61,8 +76,9 @@ const updateProgress = () => {
   //console.log('active => ' + active);
   if(active == 6){
       maxStreams = 6 + maxStreamsInt;
-    
-
+  }
+  if(active == 7){
+    maxStreams = 6 + maxStreamsInt;
   }
   for (let i = 0; i < active; i++){
     steps[i].classList.add('behindactive');
