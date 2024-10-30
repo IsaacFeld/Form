@@ -475,10 +475,7 @@ btn-group {
   border-color: var(--color-companydblue2);
 }
 
-.btn-group .btn-submit,
-.form-twelve.active~.btn-group .btn-next {
-  display: none;
-}
+
 
 .form-twelve.active~.btn-group .btn-submit {
   display: inline-block;
