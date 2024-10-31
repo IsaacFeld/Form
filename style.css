@@ -67,30 +67,11 @@ img {
   vertical-align: middle;
 }
 
-
-
-
 .container {
   max-height: 850px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2em;
-}
-
-/* entire color of window */
-.form-box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 3.1em;
-  border: 8px solid var(--color-companydarkerblue);
-  border-radius: 15px;
-  background-color: var(--color-secondary);
-}
-
-/* ==> Progress*/
-.form-box .progress {
-  position: relative;
-  padding: 1em;
 }
 
 .logo {
@@ -263,6 +244,21 @@ form>div:not(.btn-group) {
 }
 form>div.active {
   display: block;
+}
+/* entire color of window */
+.form-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3.1em;
+  border: 8px solid var(--color-companydarkerblue);
+  border-radius: 15px;
+  background-color: var(--color-secondary);
+}
+
+/* ==> Progress*/
+.form-box .progress {
+  position: relative;
+  padding: 1em;
 }
 /*other page stuff*/
 #project {
