@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Multi Step Form</title>
+  <title>PI Formular</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <datalist id="industries">
@@ -89,22 +89,23 @@
             <li class="step active">
               <button type="button" id="stepbtn" class="btn-steps"></button>
               <span>1</span>
-              <p>Information<br><span>25 secs to complete</span></p>
+              <p>Info</p>
             </li>
             <li class="step active">
               <button type="button" id="stepbtn" class="btn-steps"></button>
               <span>2</span>
-              <p>Contact<br><span>250 secs to complete</span></p>
+              <p>Contact</p>
             </li>
             <li class="step active">
               <button type="button" id="stepbtn" class="btn-steps"></button>
               <span>3</span>
-              <p>Project<br><span>5 secs to complete</span></p>
+              <p>Project</p>
             </li>
             <li class="step active">
               <button type="button" id="stepbtn" class="btn-steps"></button>
               <span>4</span>
-              <p>Analytical Task</p>
+              <p>Task</p>
+              
             </li>
             <li class="step active">
               <button type="button" id="stepbtn" class="btn-steps"></button>
@@ -140,8 +141,8 @@
           </ul>
         </div>
         <form action="">
-          <div class="form-one form-step active">
-            <div class="bg-svg"></div>
+          <div id="form" class="form-one form-step active">
+            <div id="formgraphics" class="bg-svg"></div>
             <h2>Process Insights - Application Form</h2>
             <p>Please complete the fields below</p>
             <div>
@@ -422,8 +423,8 @@
             </div>
 
           </div>
-          <div class="form-two form-step active">
-            <div class="bg-svg"></div>
+          <div id="form2"class="form-two form-step active">
+            <div id = "formgraphics" class="bg-svg"></div>
             <h2>Contact</h2>
             <div>
               <label>Phone</label>
@@ -435,17 +436,15 @@
             </div>
             <div>
               <label>Name</label>
-              <input type="text" placeholder="Phone Number">
+              <input type="text" placeholder="Name">
             </div>
             <div>
               <label>Email</label>
               <input type="email" placeholder="Email Address">
             </div>
-
-
           </div>
-          <div class="form-three form-step active">
-            <div class="bg-svg"></div>
+          <div id="form3" class="form-three form-step active">
+            <div id = "formgraphics" class="bg-svg"></div>
             <h2>Project</h2>
             <div>
               <label> Plant/Method/Process</label>
@@ -455,7 +454,7 @@
 
           </div>
           <div class="form-four form-step">
-            <div class="bg-svg"></div>
+            <div id = "formgraphics" class="bg-svg"></div>
             <h2>Analytical Task</h2>
             <div>
               <label>Industry</label>
@@ -482,7 +481,7 @@
               <label>Online Measurement</label>
             </div>
             <div>
-              <label for="quantity">Sample Stream(s)</label>
+              <label for="quantity">Sample Stream(s) (Max. 6)</label>
               <input type="number" id="streamCount" name="streams" min="1" max="6" placeholder="Number of Sample Streams">
             </div>
             <div>
@@ -491,7 +490,7 @@
             </div>
           </div>
           <div class="form-five form-step">
-            <div class="bg-svg"></div>
+            <div id = "formgraphics" class="bg-svg"></div>
             <h2>Location</h2>
             <div>
               <label>Environmental Conditions</label>
@@ -518,22 +517,22 @@
                 <table>
                   <tr>
                     <th>Min:</th>
-                    <th><input type="text"></th>
+                    <th><input id="smallcase" type="text"></th>
                   </tr>
                   <tr>
                     <th>Max:</th>
-                    <th><input type="text"></th>
+                    <th><input id="smallcase" type="text"></th>
                   </tr>
                   <tr>
                     <th id="tablelabel">Regular:</th>
-                    <th><input type="text"></th>
+                    <th><input id="smallcase" type="text"></th>
                   </tr>
                 </table>
               </div>
             </div>
           </div>
           <div class="form-six form-step">
-            <div class="bg-svg"></div>
+            <div id = "formgraphics"  class="bg-svg"></div>
             <h2>Utilities Available</h2>
             <div>
               <label>Power Supply</label>
@@ -553,13 +552,12 @@
               <p id="forgot">Looks like you forgot to enter in a number for Sample Streams, go back to step 4 and enter in a number under Sample Stream(s)</p>
             </div>
           </div>
-
           <div class="form-seven form-step">
               <div id="streamtitle">
-                <div class="bg-svg"></div>
+                <div id = "formgraphics" class="bg-svg"></div>
                 <h2 id="streamtitletext">Stream 1</h2>
               </div>
-              <div name="streamtables">
+              <div id="streamtables" name="streamtables">
                 <table class="styledtable">
                   <thead>
                     <tr>
@@ -591,7 +589,7 @@
                     <tr>
                       <td id="leftsidelabel">TIC*</td>
                       <td><input id="streaminput" type="text"></td>
-                      <td><input id="streaminput2" type="text"></td>
+                      <td><input id="streaminput" type="text"></td>
                       <td><input id="streaminput" type="text"></td>
                       <td><input id="streaminput" type="text"></td>
                       <td>ppm or mg/l</td>
@@ -760,10 +758,10 @@
                 </table>
                 <p>*sum of carbon acid H2CO3, bicarbonate HCO3-, carbonate CO32-</p>
               </div>
-            </div>
+          </div>
           <div class="form-eight form-step">
-            <div id="streamtitle">
-              <div class="bg-svg"></div>
+            <div  id="streamtitle">
+              <div id = "formgraphics" class="bg-svg"></div>
               <h2 id="streamtitletext">Stream 2</h2>
             </div>
             <div name="streamtables">
@@ -798,7 +796,7 @@
                   <tr>
                     <td id="leftsidelabel">TIC*</td>
                     <td><input id="streaminput" type="text"></td>
-                    <td><input id="streaminput2" type="text"></td>
+                    <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td>ppm or mg/l</td>
@@ -970,7 +968,7 @@
           </div>
           <div class="form-nine form-step">
             <div id="streamtitle">
-              <div class="bg-svg"></div>
+              <div id = "formgraphics" class="bg-svg"></div>
               <h2 id="streamtitletext">Stream 3</h2>
             </div>
             <div name="streamtables">
@@ -1005,7 +1003,7 @@
                   <tr>
                     <td id="leftsidelabel">TIC*</td>
                     <td><input id="streaminput" type="text"></td>
-                    <td><input id="streaminput2" type="text"></td>
+                    <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td>ppm or mg/l</td>
@@ -1177,7 +1175,7 @@
           </div>
           <div class="form-ten form-step">
             <div id="streamtitle">
-              <div class="bg-svg"></div>
+              <div  id = "formgraphics" class="bg-svg"></div>
               <h2 id="streamtitletext">Stream 4</h2>
             </div>
             <div name="streamtables">
@@ -1212,7 +1210,7 @@
                   <tr>
                     <td id="leftsidelabel">TIC*</td>
                     <td><input id="streaminput" type="text"></td>
-                    <td><input id="streaminput2" type="text"></td>
+                    <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td>ppm or mg/l</td>
@@ -1384,7 +1382,7 @@
           </div>
           <div class="form-eleven form-step">
             <div id="streamtitle">
-              <div class="bg-svg"></div>
+              <div id = "formgraphics" class="bg-svg"></div>
               <h2 id="streamtitletext">Stream 5</h2>
             </div>
             <div name="streamtables">
@@ -1419,7 +1417,7 @@
                   <tr>
                     <td id="leftsidelabel">TIC*</td>
                     <td><input id="streaminput" type="text"></td>
-                    <td><input id="streaminput2" type="text"></td>
+                    <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td>ppm or mg/l</td>
@@ -1591,7 +1589,7 @@
           </div>
           <div class="form-twelve form-step">
             <div id="streamtitle">
-              <div class="bg-svg"></div>
+              <div id = "formgraphics" class="bg-svg"></div>
               <h2 id="streamtitletext">Stream 6</h2>
             </div>
             <div name="streamtables">
@@ -1626,7 +1624,7 @@
                   <tr>
                     <td id="leftsidelabel">TIC*</td>
                     <td><input id="streaminput" type="text"></td>
-                    <td><input id="streaminput2" type="text"></td>
+                    <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td><input id="streaminput" type="text"></td>
                     <td>ppm or mg/l</td>
