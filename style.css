@@ -1,13 +1,11 @@
 :root {
-  --color-primarydark: #016034;
-  --color-primary: #009578;
   --color-secondary: #fbfbfe;
-  --color-accent: #00aa78;
   --color-text: #1d1d1f;
   --color-lighter: #b0b0b0;
   --color-lighter2: #c9c9c9;
   --font-smaller: 14px;
   --font-bigger: 20px;
+  --font-smallest: 9px;
   --color-companydarkerblue: #00405b;
   --color-companydblue2: #005679;
   --color-companydblue: #005d81;
@@ -64,19 +62,17 @@ h3 {
   line-height: 1.25;
   margin: 0 0 0.5em;
 }
-#streamtitletext{
- 
-  margin-top: 10%;
-  margin-bottom: 0;
-}
-
 img {
   max-width: 100%;
   vertical-align: middle;
 }
 
+
+
+
 .container {
-  max-width: 1100px;
+  max-height: 850px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2em;
 }
@@ -105,18 +101,11 @@ img {
   text-align: center;
 }
 
+
 .logo span {
   color: var(--color-companydblue);
 }
 
-/* ==> Progress Steps */
-.progress ul.progress-steps {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-}
 form > div .bg-svg{
   width: 60px;
   height: 50px;
@@ -158,17 +147,24 @@ form > .form-twelve .bg-svg{
   background: url(assets/icon.svg);
 }
 
+#specialLI{
+  width: 0px;
+  height: 0px;
+}
+/* ==> Progress Steps */
 .progress ul.progress-steps li {
   position: relative;
   display: flex;
   align-items: flex-start;
   margin-bottom: 2em;
 }
-#specialLI{
-  width: 0px;
-  height: 0px;
+.progress ul.progress-steps {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
 }
-
 .progress ul.progress-steps li>span {
   z-index: 3;
   position: relative;
@@ -197,13 +193,6 @@ form > .form-twelve .bg-svg{
   border: 4px solid var(--color-companydblue);
   z-index: 1;
 }
-
-.progress ul.progress-steps li p span {
-  font-size: var(--font-smaller);
-  color: #b0b0b0;
-  display: none;
-}
-
 .progress ul li p {
   position: absolute;
   top: 4em;
@@ -229,29 +218,79 @@ form>div:not(form > .form-seven) :not(form > .form-eight) :not(form > .form-nine
   margin: 0 auto;
 
 }
-form > .form-seven{
+form > .form-seven, .form-eight, .form-nine, .form-ten, .form-eleven, .form-twelve{
   max-width:600px;
 }
-form > .form-eight{
-  max-width:600px;
+form>div p {
+  color: var(--color-companygray);
+  margin-bottom: 2em;
 }
-form > .form-nine{
-  max-width:600px;
+form>div>div:not(.checkbox):not(.radio):not(#topradiolabel):not(.radioutilbox):not(#streamtitle) {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
 }
-form > .form-ten{
-  max-width:600px;
+form :where(input, textarea, select):not(#streaminput):not(#streaminput2):not(#wall):not(#rack):not(#checkboxlabel){
+  height: 45px;
+  padding: 0 1em;
+  border-radius: 7px;
+  outline-color: var(--color-companydarkerblue);
+  border: 1px solid #b0b0b0;
+  background-color: transparent;
 }
-form > .form-eleven{
-  max-width:600px;
+
+form label :not(#topradiolabel) {
+  font-size: var(--font-smaller);
+  margin-bottom: 0.5em;
+  font-weight: 600;
+
 }
-form > .form-twelve{
-  max-width:600px;
+
+form .grouping {
+  display: flex;
+
+}
+
+form .grouping input {
+  max-width: 70px;
+  text-align: center;
+  margin-right: 1em;
+}
+form>div:not(.btn-group) {
+  display: none;
+  -webkit-animation: fadeIn .8s cubic-bezier(.32, -0.14, 1, 1.06) both;
+  animation: fadeIn .8s cubic-bezier(.32, -0.14, 1, 1.06) both;
+}
+form>div.active {
+  display: block;
+}
+/*other page stuff*/
+#project {
+  min-height: 350px
+ }
+#application {
+  height:200px;
+}
+#specialp {
+  color: var(--color-companygray);
+  margin-bottom: 10px;
+}
+/*tables/streams*/
+#streamtitletext{
+ 
+  margin-top: 10%;
+  margin-bottom: 0;
 }
 #rightsidelabel{
   padding-right: 34px;
 }
 #leftsidelabel{
   padding-left: 4px;
+}
+#streamtitle{
+  color: var(--color-companydarkerblue);
+  display: inline-flex;
+  padding-top: 20px;
 }
 .styledtable{
   border-collapse: collapse;
@@ -284,19 +323,7 @@ form > .form-twelve{
 }
 .styledtable tbody tr.active-row{
   font-weight: bold;
-  color: var(--color-companydarkerblue);
-}
-
-
-#streaminput2{
-  padding-left: 30px;
-  height: 45px;
-  border-radius: 7px;
-  outline-color: var(--color-companydarkerblue);
-  border: 1px dotted var(--color-companyblue);
-  background-color: transparent;
-  box-sizing: content-box;
-  width:60%;
+  color: red;
 }
 #streaminput{
   padding-left: 15px;
@@ -313,70 +340,34 @@ form > .form-twelve{
   box-sizing: content-box;
   width: 100px;
 }
-
-#specialp {
-  color: var(--color-companygray);
-  margin-bottom: 10px;
-}
-form>div p {
-  color: var(--color-companygray);
-  margin-bottom: 2em;
-}
-
-form>div>div:not(.checkbox):not(.radio):not(#topradiolabel):not(.radioutilbox):not(#streamtitle) {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2em;
-}
-#project {
- min-height: 350px
- 
- 
-}
-#application {
-  height:200px;
-}
 #streamcheckbox {
   margin-top: 10%;
   margin-left: 33%;
   height: 20px;
   width: 20px;
 }
-
-
-
-form :where(input, textarea, select):not(#streaminput):not(#streaminput2):not(#wall):not(#rack):not(#checkboxlabel){
-  height: 45px;
-  padding: 0 1em;
-  border-radius: 7px;
-  outline-color: var(--color-companydarkerblue);
-  border: 1px solid #b0b0b0;
-  background-color: transparent;
-}
-
-form label :not(#topradiolabel) {
-  font-size: var(--font-smaller);
-  margin-bottom: 0.5em;
-  font-weight: 600;
-
-}
-
-form .grouping {
-  display: flex;
-
-}
-
-form .grouping input {
-  max-width: 70px;
-  text-align: center;
-  margin-right: 1em;
-}
-.radio{
-  display:inline-flex;
+/*checkboxes*/
+.checkbox{
+  display:block;
+  margin-bottom:20px;
 }
 #utilcheckbox{
   margin-right: 25px;
 }
+#checkboxlabel{
+  padding-top: 20px;
+  
+}
+form .checkbox input {
+  margin-right:10px;
+  height: auto;
+  display: inline-block;
+}
+/*radios*/
+.radio{
+  display:inline-flex;
+}
+
 #topradiolabel{
   margin-bottom: 0px;
 
@@ -401,33 +392,12 @@ form .grouping input {
   width:fit-content;
   height:auto;
 }
-#streamtitle{
-  color: var(--color-companydarkerblue);
-  display: inline-flex;
-  padding-top: 20px;
-}
-.checkbox{
-  display:block;
-  margin-bottom:20px;
-}
-#checkboxlabel{
-  padding-top: 20px;
-  
-}
-form .checkbox input {
-  margin-right:10px;
-  height: auto;
-  display: inline-block;
-}
+
 
 
 /* https://cubic-bezier.com/#.32,-0.14,1,1.06 */
-form>div:not(.btn-group) {
-  display: none;
-  -webkit-animation: fadeIn .8s cubic-bezier(.32, -0.14, 1, 1.06) both;
-  animation: fadeIn .8s cubic-bezier(.32, -0.14, 1, 1.06) both;
-}
 
+/*animation*/
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -442,15 +412,13 @@ form>div:not(.btn-group) {
   }
 }
 
-form>div.active {
-  display: block;
-}
+
 
 .input {
   display: flex;
   flex-direction: column;
 }
-
+/* buttons */
 .btn-group [class="btn-submit"] {
   display: inline-block
 }
@@ -527,6 +495,78 @@ btn-group {
 
 }
 
+@media screen and (max-width: 514px) {
+  .container {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 2em;
+  }
+  #smallcase{
+    width: 100px;
+  }
+  .btn-steps:active:focus{
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    border: 3px solid var(--color-companygreen);
+    border-radius: 50%;
+    width: 25px;
+    height: 30px;
+  }
+  .btn-steps {
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 20%;
+    margin-right: 0px;
+    width: 35px;
+    height: 35px;
+}
+  .btn-steps:hover{
+    z-index: 3;
+    position: absolute;
+    background-color: transparent;
+    border: 3px solid var(--color-companygreen);
+    border-radius: 50%;
+    width: 25px;
+    height: 30px;
+  }
+  .progress ul li p{
+    top: 5em;
+   text-align: right;
+    font-size: 7px;
+  }
+  .progress ul.progress-steps{
+    gap: 2px;
+    display:inline-flex;
+  }
+  .progress ul.progress-steps li>span {
+    width: 30px;
+    height:30px;
+    margin-right: 0px;
+    font-size: var(--font-smallest)
+  }
+  .progress ul.progress-steps > li.step{
+    width:25px;
+  }
+  .form-box form{
+    max-width: 400px;
+    
+  }
+  #streaminput{
+    height: 15px;
+    width: 10%;
+    border-radius: 3px;
+    padding-left: 10px;
+  }
+  .styledtable{
+    max-width:200px;
+    min-width:0px;
+    font-size: 0.5em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05)
+  }
+}
 @media screen and (min-width: 768px) {
   .progress ul.progress-steps {
     display: flex;
@@ -558,6 +598,26 @@ btn-group {
   
     z-index: 1;
   }
+  .progress ul.progress-steps {
+    flex-direction: column;
+    display: flex;
+    align-items: normal;
+    gap: 1em;
+  }
+  .progress ul li p {
+    position: absolute;
+    right: 90px;
+    top: 6px;
+    left: 45px;
+    font-size: inherit;
+
+  }
+
+  .progress ul li p span {
+    position: absolute;
+    display: block;
+  }
+
   .btn-steps:active:focus{
     z-index: 3;
     position: absolute;
@@ -594,38 +654,20 @@ btn-group {
     min-width: 300px;
     padding: 3em;
   }
-
-  .logo {
-    margin: -48px -48px 48px;
-  }
-
-  .progress ul.progress-steps {
-    flex-direction: column;
-    display: flex;
-    align-items: normal;
-    gap: 1em;
-  }
-
-
-
   .form-box form {
     padding: 3em;
     border-radius: 0 15px 15px 0;
   }
-
-  .progress ul li p {
-    position: absolute;
-    right: 90px;
-    top: 6px;
-    left: 45px;
-    font-size: inherit;
-
+  .logo {
+    margin: -48px -48px 48px;
   }
 
-  .progress ul li p span {
-    position: absolute;
-    display: block;
-  }
+
+
+
+
+
+
 
 
 
